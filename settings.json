@@ -1,0 +1,13 @@
+{
+    "versions":
+    {
+        "ClassicMoP": {
+            "dlLink": "https://example.com/classic-mop",
+            "destinationPath": ""
+        },
+        "Midnight": {
+            "dlLink": "https://example.com/midnight",
+            "destinationPath": ""
+        }
+    }
+}
