@@ -50,4 +50,18 @@ func CreateDefaultIfMissing(path string) error {
 	return os.WriteFile(path, data, 0644)
 }
 
-func Load(path)
+func Load(path string) (Config, error) {
+	data,err := os.ReadFile(path)
+	if err != nil {
+		return Config{}, err
+	}
+	var cfg Config
+	if err := json.Unmarshal(data, &cfg); err != nil {
+		return Config{}, err
+	}
+	if cfg.Versions == nil {
+		cfg.Versions = map[string]Version{}
+	}
+
+	return cfg, nil
+}
